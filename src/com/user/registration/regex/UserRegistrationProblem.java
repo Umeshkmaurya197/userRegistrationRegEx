@@ -11,7 +11,7 @@ public class UserRegistrationProblem {
 	private static String mobilePattern = "[+0-9]+\\s[0-9]{10}"; // 91 9919819801 or +91 9919819801
 	private static String passwordPattern1 = "[A-Za-z0-9]{8,}";// rule1 ? minimum 8 Characters
 	private static String passwordPattern2 = "^(?=.*[A-Z])(?=.*[a-z]{7,}).*"; // Should have at least 1 Upper Case
-
+	private static String passwordPattern3 ="^(?=.*[A-Z])(?=.*[a-z]{7,})(?=.*[0-9]).*$";
 	// uc1
 
 	public static boolean firstNameMatch(String firstName) {
@@ -55,7 +55,12 @@ public class UserRegistrationProblem {
 		matcher = p.matcher(password);
 		return matcher.matches();
 	}
-
+	//uc7
+	public static boolean passwordMatch3(String password) {
+		Pattern p = Pattern.compile(passwordPattern3);
+		matcher = p.matcher(password);
+		return matcher.matches();
+	}
 	public static void main(String[] args) {
 
 		System.out.println("First Name : " + firstNameMatch("Umesh"));// true
@@ -64,6 +69,7 @@ public class UserRegistrationProblem {
 		System.out.println("Email Address : " + mobileMatch("+91 9919819801"));// true
 		System.out.println("Password Match rule1 : " + passwordMatch1("billgateorg"));// true
 		System.out.println("Password Match rule2 : " + passwordMatch2("BillgateOrg"));// true
+		System.out.println("Password Match rule3 : " + passwordMatch2("Billgateorg3"));// true
           
 	}
 
