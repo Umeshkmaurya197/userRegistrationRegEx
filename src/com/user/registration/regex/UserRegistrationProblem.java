@@ -9,6 +9,7 @@ public class UserRegistrationProblem {
 	private static String lastNamePattern = "[A-Z][a-z]{3,}"; // Last name starts with Cap and has minimum 3 characters
 	private static String emailPattern ="[a-zA-z0-9][a-zA-z0-9.]*@[a-z]+[.][a-z]{2}[.][a-z]+";  // abc.xyz@bl.co.in
 	private static String mobilePattern ="[+0-9]+\\s[0-9]{10}"; // 91 9919819801 or +91 9919819801
+	private static String passwordPattern1 ="[A-Za-z0-9]{8,}";// rule1 – minimum 8 Characters
 	// uc1
 
 	public static boolean firstNameMatch(String firstName) {
@@ -38,12 +39,20 @@ public class UserRegistrationProblem {
 		matcher = p.matcher(moblieNumber);
 		return matcher.matches();
 	}
+	//uc5
+	public static boolean passwordMatch1(String password) {
+		Pattern p = Pattern.compile(passwordPattern1);
+		matcher = p.matcher(password);
+		return matcher.matches();
+	}
 	public static void main(String[] args) {
 
 		System.out.println("First Name : " + firstNameMatch("Umesh"));//true
 		System.out.println("Last Name : " + lastNameMatch("Maurya"));//true
 		System.out.println("Email Address : " + emailMatch("abc.xyz@bl.co.in"));//true
 		System.out.println("Email Address : " + mobileMatch("+91 9919819801"));//true
+		System.out.println("Password Match rule1 : " + passwordMatch1("BillgateOrg"));//true
+		
 	}
 
 }
