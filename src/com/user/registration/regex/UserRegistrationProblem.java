@@ -25,7 +25,7 @@ public class UserRegistrationProblem {
 	public static void main(String[] args) {
 
 		System.out.println("FirstName : " + firstNameMatch("Umesh"));//true
-		System.out.println("LastName : " + firstNameMatch("Maurya"));//true
+		System.out.println("LastName : " + lastNameMatch("Maurya"));//true
 	}
 
 }
