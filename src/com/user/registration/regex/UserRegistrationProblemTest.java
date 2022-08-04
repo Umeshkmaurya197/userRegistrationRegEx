@@ -36,6 +36,12 @@ class UserRegistrationProblemTest {
 	//uc5
 	@Test
 	public void givenPasswordRule1WhenEnteredShouldReturnTrue() {
-		assertEquals(true,UserRegistrationProblem.passwordMatch1("billgate"));
+		assertEquals(true,UserRegistrationProblem.passwordMatch1("billgate")); //should have minimum 8 character 
+	}
+	
+	//uc6
+	@Test
+	public void givenPasswordRule2WhenEnteredShouldReturnTrue() {
+		assertEquals(true, UserRegistrationProblem.passwordMatch2("BillgateOrg")); //should have atleast 1 Uppercase character 
 	}
 }
