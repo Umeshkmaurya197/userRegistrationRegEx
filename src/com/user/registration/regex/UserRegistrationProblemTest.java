@@ -25,4 +25,11 @@ class UserRegistrationProblemTest {
 	public void givenEmailAddressWhenEnteredShouldReturnTrue(){
 		assertEquals(true,UserRegistrationProblem.emailMatch("abc.xyz@bl.co.in"));
 	}
+	
+	//uc4
+	@Test
+	public void givenMobileNumberWhenEnteredShouldReturnTrue() {
+		assertEquals(true,UserRegistrationProblem.mobileMatch("+91 9919819801"));
+		assertEquals(true,UserRegistrationProblem.mobileMatch("91 9919819801"));
+	}
 }
