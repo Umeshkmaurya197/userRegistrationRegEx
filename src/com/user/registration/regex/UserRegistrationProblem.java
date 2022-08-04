@@ -9,10 +9,10 @@ public class UserRegistrationProblem {
 	private static String lastNamePattern = "[A-Z][a-z]{3,}"; // Last name starts with Cap and has minimum 3 characters
 	private static String emailPattern = "[a-zA-z0-9][a-zA-z0-9.]*@[a-z]+[.][a-z]{2}[.][a-z]+"; // abc.xyz@bl.co.in
 	private static String mobilePattern = "[+0-9]+\\s[0-9]{10}"; // 91 9919819801 or +91 9919819801
-	private static String passwordPattern1 = "[A-Za-z0-9]{8,}";// rule1 ? minimum 8 Characters
+	private static String passwordPattern1 ="[A-Za-z0-9]{8,}";// rule1 ? minimum 8 Characters
 	private static String passwordPattern2 = "^(?=.*[A-Z])(?=.*[a-z]{7,}).*"; // Should have at least 1 Upper Case
 	private static String passwordPattern3 ="^(?=.*[A-Z])(?=.*[a-z]{7,})(?=.*[0-9]).*$";// Should have at least 1 digit
-	private static String passowrdPattern4 ="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}]).*$";// Should have at exactly 1 special Character
+	private static String passowrdPattern4 ="^(?=.*[A-Z])(?=.*[a-z]{7,})(?=.*[0-9])(?=.*[!#@%^&*(){}]{1}).*$";// Should have at least 1 special Character
 	
 	// uc1
 
