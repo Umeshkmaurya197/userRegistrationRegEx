@@ -19,4 +19,10 @@ class UserRegistrationProblemTest {
 		assertEquals(true, UserRegistrationProblem.lastNameMatch("Maurya"));
 		
 	}
+	
+	//uc3
+	@Test
+	public void givenEmailAddressWhenEnteredShouldReturnTrue(){
+		assertEquals(true,UserRegistrationProblem.emailMatch("abc.xyz@bl.co.in"));
+	}
 }
