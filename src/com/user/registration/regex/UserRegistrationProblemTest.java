@@ -32,4 +32,10 @@ class UserRegistrationProblemTest {
 		assertEquals(true,UserRegistrationProblem.mobileMatch("+91 9919819801"));
 		assertEquals(true,UserRegistrationProblem.mobileMatch("91 9919819801"));
 	}
+	
+	//uc5
+	@Test
+	public void givenPasswordRule1WhenEnteredShouldReturnTrue() {
+		assertEquals(true,UserRegistrationProblem.passwordMatch1("billgate"));
+	}
 }
