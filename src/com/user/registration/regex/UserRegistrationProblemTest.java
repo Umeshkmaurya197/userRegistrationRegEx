@@ -44,4 +44,5 @@ class UserRegistrationProblemTest {
 	public void givenPasswordRule2WhenEnteredShouldReturnTrue() {
 		assertEquals(true, UserRegistrationProblem.passwordMatch2("BillgateOrg")); //should have atleast 1 Uppercase character 
 	}
+	
 }
