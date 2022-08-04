@@ -15,7 +15,6 @@ public class UserRegistrationProblem {
 	private static String passowrdPattern4 ="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%^&*(){}]).*$";// Should have at exactly 1 special Character
 	
 	// uc1
-
 	public static boolean firstNameMatch(String firstName) {
 		Pattern p = Pattern.compile(firstNamePattern);
 		matcher = p.matcher(firstName);
