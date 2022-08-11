@@ -8,6 +8,8 @@ public class UserRegistrationProblem {
 	private static String firstNamePattern = "[A-Z][a-z]{3,}"; // First name starts with Cap and has minimum 3 characters
 	private static String lastNamePattern = "[A-Z][a-z]{3,}"; // Last name starts with Cap and has minimum 3 characters
 	private static String emailPattern = "[a-zA-z0-9][a-zA-z0-9.]*@[a-z]+[.][a-z]{2}[.][a-z]+"; // abc.xyz@bl.co.in
+	
+	private static String emailPattern2 = "[a-z0-9].*@[a-z0-9]+[.a-z].*"; // to pass all sample emails
 	private static String mobilePattern = "[+0-9]+\\s[0-9]{10}"; // 91 9919819801 or +91 9919819801
 	private static String passwordPattern1 ="[A-Za-z0-9]{8,}";// rule1 ? minimum 8 Characters
 	private static String passwordPattern2 = "^(?=.*[A-Z])(?=.*[a-z]{7,}).*"; // Should have at least 1 Upper Case
@@ -70,6 +72,13 @@ public class UserRegistrationProblem {
 		return matcher.matches();
 	}
 		
+	// uc9
+		public static boolean matchSampleEmails(String email) {
+			Pattern p = Pattern.compile(emailPattern2);
+			matcher = p.matcher(email);
+			return matcher.matches();
+
+		}
 	public static void main(String[] args) {
 
 		System.out.println("First Name : " + firstNameMatch("Umesh"));// true
@@ -81,6 +90,16 @@ public class UserRegistrationProblem {
 		System.out.println("Password Match rule3 : " + passwordMatch2("Billgateorg3"));// true
 		System.out.println("Password Match rule4 : " + passwordMatch2("Billgateorg3$"));// true
           
+		System.out.println("Email Address1 : " + matchSampleEmails("abc@yahoo.com"));
+		System.out.println("Email Address2 : " + matchSampleEmails("abc-100@yahoo.com"));
+		System.out.println("Email Address3 : " + matchSampleEmails("abc.100@yahoo.com"));
+		System.out.println("Email Address4 : " + matchSampleEmails("abc111@abc.com"));
+		System.out.println("Email Address5 : " + matchSampleEmails("abc-100@abc.net"));
+		System.out.println("Email Address6 : " + matchSampleEmails("abc.100@abc.com.au"));
+		System.out.println("Email Address7 : " + matchSampleEmails("abc@1.com"));
+		System.out.println("Email Address8 : " + matchSampleEmails("abc@gmail.com.com"));
+		System.out.println("Email Address9 : " + matchSampleEmails("abc+100@gmail.com"));
+		
 	}
 
 }
